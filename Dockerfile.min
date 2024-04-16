@@ -10,7 +10,7 @@ RUN apt-get update && \
 RUN add-apt-repository ppa:deadsnakes/ppa
 
 # Install specific Python version, replace 3.8 with your desired version
-RUN apt-get install -y python3.8 python3-pip
+RUN apt-get install -y python3.10 python3-pip
 
 # Install necessary Python packages
 RUN apt-get install -y python3-yaml python3-fastapi python3-uvicorn
@@ -30,4 +30,4 @@ RUN ./download_voices_tts-1.sh
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Command to run on container start
-CMD python3.8 speech.py --host 0.0.0.0 --port 8000 --xtts_device none
+CMD python3.10 speech.py --host 0.0.0.0 --port 8000 --xtts_device none
